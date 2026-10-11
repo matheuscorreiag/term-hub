@@ -964,7 +964,7 @@ function renderQueue() {
       h(
         'div',
         { class: 'queued', title: q.text },
-        h('span', { textContent: `Queued: ${q.text || q.attachments.map((a) => a.name).join(', ')}` }),
+        h('span', { textContent: q.text || q.attachments.map((a) => a.name).join(', ') }),
         h('button', { type: 'button', textContent: '×', 'aria-label': 'Remove from queue', onclick: () => wsSend({ op: 'unqueue', chatId: state.chatId, id: q.id }) }),
       ),
     ),
